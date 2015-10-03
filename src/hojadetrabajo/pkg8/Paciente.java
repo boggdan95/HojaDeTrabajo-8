@@ -11,17 +11,24 @@ package hojadetrabajo.pkg8;
  *
  * @author Alicia-Lester
  */
-public class Paciente<E> implements Comparable<Paciente> {
+public class Paciente implements Comparable<Paciente> {
     
     private String nombre;
-    private char codigo;
+    private String codigo;
     private String enfermedad;
+
+    public Paciente(String nombre, String codigo, String enfermedad) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.enfermedad = enfermedad;
+    }
+   
 
     public String getNombre() {
         return nombre;
     }
 
-    public char getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
@@ -33,7 +40,7 @@ public class Paciente<E> implements Comparable<Paciente> {
         this.nombre = nombre;
     }
 
-    public void setCodigo(char codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -41,10 +48,12 @@ public class Paciente<E> implements Comparable<Paciente> {
         this.enfermedad = enfermedad;
     }
     
-    @Override
     public int compareTo(Paciente nuevoPaciente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              
+       return codigo.compareTo(nuevoPaciente.getCodigo());
     }
+
+    
 
     
 }
