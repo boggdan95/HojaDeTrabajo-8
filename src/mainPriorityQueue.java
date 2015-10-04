@@ -1,20 +1,14 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.PriorityQueue;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class main.
- *
- * @author Boggdan Barrientos
- * @author Jorge Manrique
+ * The Class mainPriorityQueue.
  */
-public class main {
-
-  
-
+public class mainPriorityQueue {
+	
 	/**
 	 * The main method.
 	 *
@@ -25,7 +19,7 @@ public class main {
         // TODO code application logic here
         
         //Se crea un objeto de la clase vectortorHeap
-    	VectorHeap<Paciente> vector = new VectorHeap<Paciente>();
+    	PriorityQueue<Paciente> vector = new PriorityQueue<Paciente>();
         
     	
     	
@@ -61,14 +55,12 @@ public class main {
         
         //Se muestran las prioridades ya ordenadas
          for (int i = 0; i < noPacientes; i++){
-        	 	Paciente paciente = vector.remove();
+        	 	Paciente paciente = (Paciente)vector.poll();
            		
            		System.out.println(">>Nombre: " + paciente.getNombre()+" Enfermedad: "+ paciente.getEnfermedad() + " Prioridad: " + paciente.getCodigo());
             	}
             
        
 }
-    
+
 }
-
-
